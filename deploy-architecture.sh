@@ -16,13 +16,13 @@ cp airflow/dags/* /mnt/airflow/dags/
 cp application/*  /mnt/airflow/scripts/
 
 #Bring up Airflow cluster as a Docker Swarm Service
-cd airflow && sudo docker stack deploy -c docker-compose-swarm-uber.yml  airflow-cluster
+cd airflow && sudo docker stack deploy -c docker-compose.yml  airflow-cluster
 
 #Bring up Spark cluster as a Docker Swarm Service
-cd spark && sudo docker stack deploy -c docker-compose-swarm.yml spark-cluster
+cd spark && sudo docker stack deploy -c docker-compose.yml spark-cluster
 
 #Bring up Kafka cluster as a Docker Swarm Service
-cd kafka && sudo docker stack deploy -c docker-compose_no_ssl_swarm.yml kafka-cluster
+cd kafka && sudo docker stack deploy -c docker-compose.yml kafka-cluster
 
 
 #airflow ui: http://<host>:8080
