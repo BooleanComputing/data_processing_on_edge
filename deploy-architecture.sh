@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+docker swarm leave
+
 #Initialize single node docker swarm cluster
 docker swarm init
 
