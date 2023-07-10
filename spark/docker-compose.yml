@@ -6,7 +6,7 @@ networks:
       name: data-stream
 services:
   spark:
-    image: spark:3.4
+    image: vasistapolali/spark:3.4
     networks:
       - data-stream
     environment:
@@ -24,7 +24,7 @@ services:
     volumes:
       - /mnt:/home
   spark-worker:
-    image: spark:3.4
+    image: vasistapolali/spark:3.4
     deploy:
       mode: replicated
       replicas: 1

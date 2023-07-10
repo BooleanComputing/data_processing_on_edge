@@ -16,7 +16,7 @@ services:
       - POSTGRES_DB=test
 
   airflow:
-    image: airflow-uber:2.6.1
+    image: vasistapolali/airflow:2.6.1
     networks:
       - data-stream
     environment:

@@ -28,7 +28,7 @@ RUN pip3 install supervisor
 ### Create supervisord config
 RUN echo "[supervisord]" >> /etc/supervisord.conf && \
     echo "nodaemon=true" >> /etc/supervisord.conf && \
-    echo "user=root" >> /etc/supervisord.conf && \
+    echo "user=airflow" >> /etc/supervisord.conf && \
     echo "" >> /etc/supervisord.conf && \
     echo "[program:webserver]" >> /etc/supervisord.conf && \
     echo "command=/usr/local/bin/airflow webserver" >> /etc/supervisord.conf && \
