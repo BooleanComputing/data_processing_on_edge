@@ -10,7 +10,7 @@ docker network create -d overlay --scope=swarm data-stream
 mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data
 
 cp airflow/dags/* /mnt/airflow/dags/
-cp applicatio/*  /mnt/airflow/scripts/
+cp application/*  /mnt/airflow/scripts/
 
 #Bring up Airflow cluster as a Docker Swarm Service
 cd airflow/swarm && sudo docker stack deploy -c docker-compose-swarm-uber.yml  airflow-cluster
