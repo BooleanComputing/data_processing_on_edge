@@ -1,0 +1,34 @@
+version: '3.9'
+
+networks:
+  data-stream:
+    external:
+      name: data-stream
+
+services:
+  postgres:
+    image: postgres:13
+    networks:
+      - data-stream
+    environment:
+      - POSTGRES_USER=test
+      - POSTGRES_PASSWORD=test
+      - POSTGRES_DB=test
+
+  airflow:
+    image: airflow-uber:2.6.1
+    networks:
+      - data-stream
+    environment:
+      - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://test:test@postgres/test
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - /mnt/airflow/dags:/root/airflow/dags
+      - /mnt/airflow/logs:/root/airflow/logs
+      - /mnt/airflow/config:/root/airflow/config
+      - /mnt/airflow/plugins:/root/airflow/plugins
+      - /mnt/airflow/scripts:/root/airflow/scripts
+      - /mnt/images/:/home/images
+    ports:
+      - "8080:18080"
