@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-docker swarm leave --force
 
 #Initialize single node docker swarm cluster
 docker swarm init
 
-docker network remove  data-stream
 #Create overlay network
 docker network create -d overlay --scope=swarm data-stream
 
