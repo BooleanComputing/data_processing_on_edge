@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-docker swarm leave
+docker swarm leave --force
 
 #Initialize single node docker swarm cluster
 docker swarm init
@@ -16,7 +16,7 @@ cp airflow/dags/* /mnt/airflow/dags/
 cp application/*  /mnt/airflow/scripts/
 
 #Bring up Airflow cluster as a Docker Swarm Service
-cd airflow/swarm && sudo docker stack deploy -c docker-compose-swarm-uber.yml  airflow-cluster
+cd airflow && sudo docker stack deploy -c docker-compose-swarm-uber.yml  airflow-cluster
 
 #Bring up Spark cluster as a Docker Swarm Service
 cd spark && sudo docker stack deploy -c docker-compose-swarm.yml spark-cluster
