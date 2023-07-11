@@ -13,7 +13,7 @@ dag_run_time= sys.argv[4]
 
 dag_run_time = dag_run_time.split(".")[0]
 dag_run_time = dt.strptime(dag_run_time, '%Y-%m-%dT%H:%M:%S')
-execution_time = dag_run_time + timedelta(seconds=60 * 5)
+execution_time = dag_run_time + timedelta(seconds=60 * 2)
 
 checkpoint_dir = "/home/images/checkpoint_weather"
 stream_termination_time= 60 * 25
