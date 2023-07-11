@@ -14,21 +14,18 @@ services:
       - POSTGRES_USER=test
       - POSTGRES_PASSWORD=test
       - POSTGRES_DB=test
-
   airflow:
-    image: vasistapolali/airflow:2.6.1
+    image: vasistapolali/airflow:2.6.2
     networks:
       - data-stream
     environment:
       - AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgres://test:test@postgres/test
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
-      - /mnt/airflow/dags:/root/airflow/dags
-      - /mnt/airflow/logs:/root/airflow/logs
-      - /mnt/airflow/config:/root/airflow/config
-      - /mnt/airflow/plugins:/root/airflow/plugins
-      - /mnt/airflow/scripts:/root/airflow/scripts
-      - /mnt/images/:/home/images
+      - /mnt/airflow/dags:/usr/local/airflow/dags
+      - /mnt/airflow/logs:/usr/local/airflow/logs
+      - /mnt/airflow/config:/usr/local/airflow/config
+      - /mnt/airflow/plugins:/usr/local/airflow/plugins
+      - /mnt/airflow/scripts:/usr/local/airflow/scripts
     ports:
       - "8080:18080"

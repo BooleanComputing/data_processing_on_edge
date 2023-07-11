@@ -4,7 +4,6 @@ import os
 from datetime import datetime
 from airflow import DAG, macros
 from airflow.operators.bash import BashOperator
-from datetime import timedelta
 
 ENV_ID = os.environ.get("SYSTEM_TESTS_ENV_ID")
 DAG_ID = "Weather Test Data Pipeline"
@@ -18,7 +17,7 @@ with DAG(
     tags=["battery-dev"],
 ) as dag:
     submit_job = BashOperator(
-        task_id="spark_submit_weather_test_data",
+        task_id="generate_weather_test_data",
         bash_command='python /root/airflow/scripts/genarate_mock_weather_events.py')
 
 
