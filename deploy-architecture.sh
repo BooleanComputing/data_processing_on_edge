@@ -11,7 +11,7 @@ docker network create -d overlay --scope=swarm data-stream
 mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data /mnt/spark_checkpoint/
 chmod -R 775 /mnt
 
-cp spark/jars/ /mnt/airflow/scripts/spark_jars/
+cp spark/jars/ /mnt/airflow/scripts/spark/jars/
 
 wget https://dlcdn.apache.org/spark/spark-3.4.1/spark-3.4.1-bin-hadoop3.tgz
 tar -xvf spark-3.4.1-bin-hadoop3.tgz
