@@ -19,7 +19,8 @@ with DAG(
 ) as dag:
     submit_job = BashOperator(
         task_id="spark_submit_image_streaming",
-        bash_command='${AIRFLOW_HOME}/scripts/spark/bin/spark-submit ${AIRFLOW_HOME}/scripts/weather_streaming.py kafka-1:9092  weather_data weather_data_avg {{ execution_date }}')
+        bash_command='${AIRFLOW_HOME}/scripts/spark/bin/spark-submit --master spark://spark:7077 '
+                     '--name image-streaming ${AIRFLOW_HOME}/scripts/weather_streaming.py kafka-1:9092  weather_data weather_data_avg {{ execution_date }}')
 
 
 submit_job
