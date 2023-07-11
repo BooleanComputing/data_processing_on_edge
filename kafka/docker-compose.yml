@@ -7,7 +7,7 @@ networks:
 
 services:
   kafka-1:
-    image: docker.io/bitnami/kafka:3.3.2-debian-11-r40
+    image: bitnami/kafka:3.3.2-debian-11-r40
     networks:
       - ingress-net
     environment:
