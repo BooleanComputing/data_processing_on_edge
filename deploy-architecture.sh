@@ -8,7 +8,7 @@ docker swarm init
 docker network create -d overlay --scope=swarm data-stream
 
 #Create local volumes for data persistence
-mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data
+mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data /mnt/spark_checkpoint/
 chmod -R 775 /mnt
 
 cp airflow/spark_jars/ /mnt/airflow/scripts/spark_jars/
