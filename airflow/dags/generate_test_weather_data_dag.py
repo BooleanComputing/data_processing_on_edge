@@ -18,7 +18,7 @@ with DAG(
 ) as dag:
     submit_job = BashOperator(
         task_id="generate_weather_test_data",
-        bash_command='python /root/airflow/scripts/genarate_mock_weather_events.py')
+        bash_command='python /usr/local/airflow/scripts/genarate_mock_weather_events.py')
 
 
 submit_job
