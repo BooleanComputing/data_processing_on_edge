@@ -23,7 +23,7 @@ cp airflow/dags/* /mnt/airflow/dags/
 cp application/*  /mnt/airflow/scripts/
 
 #Bring up Airflow cluster as a Docker Swarm Service
-cd airflow && cp airflow/spark_jars/ /mnt/airflow/scripts/spark_jars/ && sudo docker stack deploy -c docker-compose.yml  airflow-cluster
+cd airflow && mv  airflow/spark_jars/ /mnt/airflow/scripts/spark_jars/ && sudo docker stack deploy -c docker-compose.yml  airflow-cluster
 chmod -R 775 /mnt/airflow/scripts/spark_jars/
 
 #Bring up Spark cluster as a Docker Swarm Service
