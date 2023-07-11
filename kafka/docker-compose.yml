@@ -20,34 +20,6 @@ services:
       - KAFKA_CFG_NODE_ID=1
     volumes:
       - "./kafka-1-data:/bitnami/kafka"
-  kafka-2:
-    image: docker.io/bitnami/kafka:3.3.2-debian-11-r40
-    networks:
-      - ingress-net
-    environment:
-      - KAFKA_KRAFT_CLUSTER_ID=5Yr1SIgYQz-b-dgRabWx4g
-      - BROKER_ID=1
-      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9093,2@kafka-2:9093,3@kafka-3:9093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka-2:9092
-      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_CFG_NODE_ID=2
-    volumes:
-      - "./kafka-2-data:/bitnami/kafka"
-  kafka-3:
-    image: docker.io/bitnami/kafka:3.3.2-debian-11-r40
-    networks:
-      - ingress-net
-    environment:
-      - KAFKA_KRAFT_CLUSTER_ID=5Yr1SIgYQz-b-dgRabWx4g
-      - BROKER_ID=1
-      - KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka-1:9093,2@kafka-2:9093,3@kafka-3:9093
-      - KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka-3:9092
-      - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_CFG_NODE_ID=3
-    volumes:
-      - "./kafka-3-data:/bitnami/kafka"
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
