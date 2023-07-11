@@ -8,7 +8,7 @@ echo "Create overlay network"
 docker network create -d overlay --scope=swarm data-stream
 
 echo "Create local dir for data persistence"
-mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data /mnt/spark_checkpoint/
+mkdir -p /mnt/airflow/dags /mnt/airflow/logs /mnt/airflow/config /mnt/airflow/plugins /mnt/airflow/scripts /mnt/data /mnt/kafka-1-data /mnt/spark_checkpoint/ /mnt/airflow/scripts/spark_jars/
 chmod -R 775 /mnt
 
 
