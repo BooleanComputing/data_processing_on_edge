@@ -20,7 +20,7 @@ rm spark-3.4.1-bin-hadoop3.tgz
 
 
 echo "Copy additional Spark jars"
-cp airflow/spark_jars/ /mnt/airflow/scripts/spark_jars/
+cp spark/jars/* /mnt/airflow/scripts/spark_jars/
 cp airflow/dags/* /mnt/airflow/dags/
 cp application/*  /mnt/airflow/scripts/
 
