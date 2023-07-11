@@ -8,5 +8,5 @@ docker stack rm kafka-cluster
 
 docker network remove data-stream
 
-docker swarm leave
+docker swarm leave -f
 rm -r /mnt
