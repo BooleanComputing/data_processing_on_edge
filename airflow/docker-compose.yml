@@ -27,5 +27,6 @@ services:
       - /mnt/airflow/config:/usr/local/airflow/config
       - /mnt/airflow/plugins:/usr/local/airflow/plugins
       - /mnt/airflow/scripts:/usr/local/airflow/scripts
+      - /mnt/spark_checkpoint/:/tmp/spark_checkpoint
     ports:
       - "8080:18080"

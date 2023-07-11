@@ -24,7 +24,8 @@ services:
       - '4040:4040'
       - '15002:15002'
     volumes:
-      - /mnt:/home
+      - /mnt/data:/home/data
+      - /mnt/spark_checkpoint/:/tmp/spark_checkpoint
   spark-worker:
     image: vasistapolali/spark:3.4
     deploy:
@@ -45,5 +46,6 @@ services:
     ports:
       - '8081:8081'
     volumes:
-      - /mnt:/home
+      - /mnt/data:/home/data
+      - /mnt/spark_checkpoint/:/tmp/spark_checkpoint
 

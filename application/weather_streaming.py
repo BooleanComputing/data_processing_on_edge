@@ -15,7 +15,7 @@ dag_run_time = dag_run_time.split(".")[0]
 dag_run_time = dt.strptime(dag_run_time, '%Y-%m-%dT%H:%M:%S')
 execution_time = dag_run_time + timedelta(seconds=60 * 2)
 
-checkpoint_dir = "/usr/local/airflow/scripts/checkpoint_weather"
+checkpoint_dir = "/tmp/spark_checkpoint/checkpoint_weather"
 stream_termination_time= 60 * 25
 
 def get_spark():
