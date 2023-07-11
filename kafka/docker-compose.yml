@@ -17,7 +17,7 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
       - KAFKA_CFG_AUTO_CREATE_TOPICS_ENABLE=true
     volumes:
-      - "./kafka-1-data:/bitnami/kafka"
+      - "/mnt/kafka-1-data:/bitnami"
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
