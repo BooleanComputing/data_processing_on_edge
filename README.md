@@ -1,19 +1,19 @@
 # Data Processing System.
 
 The Data processing solution allows one to deploy and process data on multiple nodes on the Edge closer to the data.
- Ideal for first level of data cleansing filtering and real time analytics.It can also be adapted to work on Large dattassets on cloud or on-prem.
+Ideal for first level of data cleansing, filtering and real time analytics.It can also be adapted to work on large datasets on cloud or on-prem.
  
  
  ## Architecture
 
 
-![Arch Image](architecture_images/StreamingArchitectureLatest.png)
+![Arch Image](architecture_images/Architecture.png)
 
-The architectire consists of the following:
-* An Apache Spark cluster to process data as Batch processing or event driven Streaming appplicaions.
+The architecture consists of the following:
+* An Apache Spark cluster to process data as Batch processing or event driven Streaming applications.
 * An Apache Kafka cluster  to store amd process events as messages
-* An Apache Airflow cluster to Sschedduuel and monitor the appications
-* A Docker Swarm clsuter for container orchestration
+* An Apache Airflow cluster to schedule and monitor the appications
+* A Docker Swarm cluster for container orchestration
 
 ##Running the POC
 
@@ -40,9 +40,9 @@ This starts a single node swarm cluster andd deploys the services.
      kafka UI: <httttp://host:5001
   
    ```
-* Kafka Broker is only accesible from within the swarm netwprk
+* Kafka Broker is only accessible from within the swarm network
 
-* Information about the broker, Topics amd messages can be accessed through tthr kafka UI
+* Information about the broker, Topics and messages can be accessed through the kafka UI
 
 ####Apache Airflow
    
@@ -50,9 +50,9 @@ This starts a single node swarm cluster andd deploys the services.
    airflow ui: htttp://<host>:8080
    
    ``` 
-*The implementation has a couple of Dags that would demonsrtate reading, processing and writing the events to and from kafka
-*Weather-Streaming DAG is a Spark structured streaming apppication that reads IOT data from a kafka topic, averagaes out the Temperature, Humidity andd Pressure on 10 second windows and writes the output to an other Kafka topic.
-*Generate-Weather-Test-Data DAG is a python application to generate  mock climate sensor data and write to the kafka topic for testing.
+* The implementation has a couple of Dags that demonstrate reading, processing and writing the events to and from kafka
+* Weather-Streaming DAG schedules a Spark structured streaming apppication that reads IOT data from a kafka topic, averagaes out the Temperature, Humidity andd Pressure on 10 second windows and writes the output to another Kafka topic.
+* Generate-Weather-Test-Data DAG runs a python application to generate  mock climate sensor data and write to the kafka topic for testing
  
  Trigger the Test DAG from the UI
  ![Arch Image](architecture_images/Airflow.png)
