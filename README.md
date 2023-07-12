@@ -48,6 +48,8 @@ This starts a single node swarm cluster andd deploys the services.
    
    ```
    airflow ui: htttp://<host>:8080
+   default user=admin
+   default password=admin
    ``` 
 * The implementation has a couple of Dags that demonstrate reading, processing and writing the events to and from kafka
 * Weather-Streaming DAG schedules a Spark structured streaming apppication that reads IOT data from a kafka topic, averagaes out the Temperature, Humidity andd Pressure on 10 second windows and writes the output to another Kafka topic.
