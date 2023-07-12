@@ -4,7 +4,7 @@ The Data processing solution allows one to deploy and process data on multiple n
 Ideal for first level of data cleansing, filtering and real time analytics.It can also be adapted to work on large datasets on cloud or on-prem.
  
  
- ## Architecture
+## Architecture
 
 
 ![Arch Image](architecture_images/Architecture.png)
@@ -15,7 +15,7 @@ The architecture consists of the following:
 * An Apache Airflow cluster to schedule and monitor the appications
 * A Docker Swarm cluster for container orchestration
 
-##Running the POC
+## Running the POC
 
 ```
 git clone https://github.com/BooleanComputing/data_processing_on_edge.git
@@ -24,8 +24,9 @@ cd data_processing_on_edge
 ```
 This starts a single node swarm cluster andd deploys the services.
 
-##Accessing the services
-####Apache Spark
+## Accessing the services
+
+#### Apache Spark
 ```
    spark standalone Master: spark://<host>:7077
    spark history server UI: http://<host>:5000
@@ -34,7 +35,7 @@ This starts a single node swarm cluster andd deploys the services.
    ```
  * Test the spark connect server for interactive development and ad-hoc analytics with Spark from an IDE or Notebook.
     * replace  localhost with node IP/hostname and run `application/spark_connect_demo.py` 
-####Apache Kafka
+#### Apache Kafka
    ```
      kafka broker: <service name>:9092
      kafka UI: <httttp://host:5001
@@ -44,7 +45,7 @@ This starts a single node swarm cluster andd deploys the services.
 
 * Information about the broker, Topics and messages can be accessed through the kafka UI
 
-####Apache Airflow
+#### Apache Airflow
    
    ```
    airflow ui: htttp://<host>:8080
@@ -61,7 +62,7 @@ This starts a single node swarm cluster andd deploys the services.
  ![Arch Image](architecture_images/KafkaUI.png)
 
 
-##Decomissioning
+## Decomissioning
 
 `./delete-architecture.sh`
  
