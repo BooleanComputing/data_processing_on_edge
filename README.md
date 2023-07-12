@@ -56,7 +56,7 @@ This starts a single node swarm cluster andd deploys the services.
 * Generate-Weather-Test-Data DAG runs a python application to generate  mock climate sensor data and write to the kafka topic for testing
  
  Trigger the Test DAG from the UI
- ![Arch Image](architecture_images/Airflow.png)
+ ![Arch Image](architecture_images/Airflow_alluxio.png)
  
  Check the messages in the Topics from the Kafka UI
  ![Arch Image](architecture_images/KafkaUI.png)
