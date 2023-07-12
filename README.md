@@ -67,4 +67,12 @@ This starts a single node swarm cluster andd deploys the services.
   Cleans and resets the environment to the starting point.
 
 
+### Disclaimer
+This System is developed using Open Source software.It comes without any warranty or guarantees. You can redistribute it
+and/or modify it under the terms of the respective software licenses.
 
+### Contact
+Looking for some collaboration in building a custom solution for you data processing needs? Ready to deploy solutions from Boolean UG help you easily bootstrap,customize and manage data processing systems at scale.
+
+Message me at : https://www.linkedin.com/in/vasista-polali-a2954b20/
+ 
