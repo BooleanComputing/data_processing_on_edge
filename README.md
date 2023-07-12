@@ -18,7 +18,7 @@ The architecture consists of the following:
 ## Running the POC
 
 ```
-git clone https://github.com/BooleanComputing/data_processing_on_edge.git
+git clone https://github.com/BooleanComputing/data_processing_system.git
 cd data_processing_on_edge
 ./deploy-architecture.sh
 ```
