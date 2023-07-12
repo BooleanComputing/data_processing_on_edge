@@ -1,4 +1,4 @@
-# Data Processing System.
+# Data Processing System
 
 The Data processing solution allows one to deploy and process data on multiple nodes on the Edge closer to the data.
 Ideal for first level of data cleansing, filtering and real time analytics.It can also be adapted to work on large datasets on cloud or on-prem.
